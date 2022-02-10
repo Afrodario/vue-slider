@@ -11,7 +11,7 @@
    <div class="container" id="root">
         <div class="items">
             
-            <div class="item">
+            <div class="item" @mouseover="stop" @mouseleave="start">
                 <img :src="items[active].url" alt="">
                 <div class="text">
                     <h3>{{items[active].name}}</h3>
@@ -26,7 +26,7 @@
             <div class="next" @click="next"></div>
             
             <div class="thumb" :class="index == active?'active':'' " v-for="(item, index) in items">
-                <img :src="item.url" @click="clicked" alt="">
+                <img :src="item.url" alt="">
             </div> 
             
         </div>

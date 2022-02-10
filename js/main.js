@@ -52,14 +52,18 @@ const app = new Vue(
                 }
             },
 
-            clicked() {
-                 
+            stop() {
+                clearInterval(clock);
             },
+
+            start() {
+                clock = setInterval(this.next, 3000)
+            }
 
         },
 
         mounted() {
-            setInterval(this.next, 3000)
+            clock = setInterval(this.next, 3000)
         },
 
     }
