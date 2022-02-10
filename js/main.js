@@ -30,7 +30,8 @@ const app = new Vue(
                 }
             ],
 
-            active: 0
+            active: 0,
+            clock: ''
         },
 
         methods: {
@@ -53,17 +54,17 @@ const app = new Vue(
             },
 
             stop() {
-                clearInterval(clock);
+                clearInterval(this.clock);
             },
 
             start() {
-                clock = setInterval(this.next, 3000)
+                this.clock = setInterval(this.next, 3000)
             }
 
         },
 
         mounted() {
-            clock = setInterval(this.next, 3000)
+            this.clock = setInterval(this.next, 3000)
         },
 
     }
