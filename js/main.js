@@ -32,6 +32,7 @@ const app = new Vue(
 
             active: 0
         },
+
         methods: {
 
             back() {
@@ -49,9 +50,18 @@ const app = new Vue(
                 } else {
                     this.active++;
                 }
-            }
+            },
 
-        }
+            clicked() {
+                 
+            },
+
+        },
+
+        mounted() {
+            setInterval(this.next, 3000)
+        },
+
     }
 );
 
