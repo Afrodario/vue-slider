@@ -34,6 +34,10 @@ const app = new Vue(
             clock: ''
         },
 
+        mounted() {
+            this.clock = setInterval(this.next, 3000)
+        },
+
         methods: {
 
             back() {
@@ -53,6 +57,10 @@ const app = new Vue(
                 }
             },
 
+            currentSlide(index) {
+                this.active = index;
+            },
+
             stop() {
                 clearInterval(this.clock);
             },
@@ -61,10 +69,6 @@ const app = new Vue(
                 this.clock = setInterval(this.next, 3000)
             }
 
-        },
-
-        mounted() {
-            this.clock = setInterval(this.next, 3000)
         },
 
     }

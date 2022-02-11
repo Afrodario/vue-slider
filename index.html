@@ -25,7 +25,10 @@
             <div class="prev" @click="back"></div>
             <div class="next" @click="next"></div>
             
-            <div class="thumb" :class="index == active?'active':'' " v-for="(item, index) in items">
+            <div class="thumb" 
+            :class="index == active?'active':'' " 
+            v-for="(item, index) in items"
+            @click="currentSlide(index)">
                 <img :src="item.url" alt="">
             </div> 
             
